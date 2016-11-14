@@ -2,7 +2,57 @@
 <html>
     <head>
         <title>Cards</title>
-        <link rel="stylesheet" href="cards.css">
+        <style>
+        .card {
+          width: 150px;
+          height: 200px;
+          display: block;
+          background: #666;
+          transform-origin: 50% 99%;
+            
+        }
+
+        /*.but-yes {
+            animation: yay 0.7s ease-out;
+        }*/
+
+        .but-no {
+            animation: nope 0.7s ease-out;
+        }
+
+        @keyframes yay {
+          from {
+            transform: rotate(0deg);
+            opacity: 1;
+          }
+          to {
+            transform: rotate(40deg) translateY(-80px);
+            opacity: 0;
+          }
+        }
+
+        @keyframes nope {
+          from {
+            transform: rotate(0deg);
+            opacity: 1;
+          }
+          to {
+            transform: rotate(-40deg) translateY(-80px);
+            opacity: 0;
+          }
+        }
+      </style>
+      <script src="jquery-3.1.1.min.js"></script>
+      <script>
+        $( ".but-yes" ).click(function() {
+            alert($( this ).css( "transform" ));
+            if (  $( this ).css( "transform" ) == 'none' ){
+                $(this).css("transform","rotate(45deg)");
+            } else {
+                $(this).css("transform","" );
+            }
+        });
+      </script>
     </head>
     <body>
         <ul>
