@@ -3,24 +3,31 @@
     <head>
         <title>Cards</title>
         <style>
+
+        .list .card {
+          display: none;
+        }
+
+        .list .current {
+          display: block;
+        }
+
         .card {
           width: 150px;
           height: 200px;
-          display: block;
           background: #666;
           transform-origin: 50% 99%;
-            
         }
 
         /*.but-yes {
-            animation: yay 0.7s ease-out;
-        }*/
-
-        .but-no {
-            animation: nope 0.7s ease-out;
+          background:url("noun_628579_cc.svg");
         }
 
-        @keyframes yay {
+        .but-no {
+          animation: nope 0.7s ease-out;
+        }*/
+
+        /*@keyframes yay {
           from {
             transform: rotate(0deg);
             opacity: 1;
@@ -40,27 +47,80 @@
             transform: rotate(-40deg) translateY(-80px);
             opacity: 0;
           }
-        }
+        }*/
       </style>
-      <script src="jquery-3.1.1.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
       <script>
-        $( ".but-yes" ).click(function() {
-            alert($( this ).css( "transform" ));
-            if (  $( this ).css( "transform" ) == 'none' ){
-                $(this).css("transform","rotate(45deg)");
-            } else {
-                $(this).css("transform","" );
-            }
-        });
+        $.fn.animateRotate = function(angle, duration, easing, complete) {
+          var args = $.speed(duration, easing, complete);
+          var step = args.step;
+          return this.each(function(i, e) {
+            args.complete = $.proxy(args.complete, e);
+            args.step = function(now) {
+              $.style(e, 'transform', 'rotate(' + now + 'deg)');
+              if (step) return step.apply(e, arguments);
+            };
+
+            $({deg: 0}).animate({deg: angle}, args);
+          });
+        };
       </script>
     </head>
     <body>
         <ul>
-            <li class="card">#1</li>
+            <li class="card current">#1</li>
+            <!-- <li class="card">#2</li> -->
         </ul>
         <div class="button-wrapper">
-            <button class="but-yes">✔</button>
             <button class="but-no">X</button>
+            <!-- <input type="image" src="noun_628579_cc.svg" class="but-yes"/> -->
+            <button class="but-yes">✔</button>
         </div>
+
+        <script>
+          $( ".but-yes" ).click(function() {
+              // alert($( this ).css( "transform" ));
+              if (  $( ".card" ).css( "transform" ) == 'none' ){
+                var currentOpacity = 1.0;
+                var count = 0;
+                $(".card").animateRotate(45, {
+                  duration: 500,
+                  easing: 'swing',
+                  complete: function () {},
+                  step: function () {
+                    currentOpacity -= .03;
+                    count++;
+                    // console.log(currentOpacity);
+                    // console.log(count);
+                    $(".card").css("opacity", currentOpacity);
+                  }
+                });
+              } else {
+                  $(".card").css("-webkit-transform","" );
+              }
+          });
+
+          $( ".but-no" ).click(function() {
+              // alert($( this ).css( "transform" ));
+              if (  $( ".card" ).css( "transform" ) == 'none' ){
+                var currentOpacity = 1.0;
+                var count = 0;
+                $(".card").animateRotate(-45, {
+                  duration: 500,
+                  easing: 'swing',
+                  complete: function () {},
+                  step: function () {
+                    currentOpacity -= .03;
+                    count++;
+                    // console.log(currentOpacity);
+                    // console.log(count);
+                    $(".card").css("opacity", currentOpacity);
+                  }
+                });
+              } else {
+                  $(".card").css("-webkit-transform","" );
+              }
+          });
+        </script>
     </body>
 </html>
