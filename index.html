@@ -1,81 +1,80 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <title>JobsForHosh</title>
-        <style>
-            body {
+
+<head>
+    <meta charset="utf-8">
+    <title>JobsForHosh</title>
+    <style>
+        body {
             /*    background-color: #2196F3;*/
-                background-color: #574B90;
-            }
-
-            body p {
-                font-family: "Coming Soon";
-                color: white;
-                font-size: 40px;
-                left:43%;
-                top: 0%;
-                position: absolute;
-            }
-
-            .button-wrapper button {
-                text-align: center;
-            /*    background-color: #4CAF50;*/
-                background-color: #FC85AE;
-                font-family: "Roboto";
-                padding: 15px 32px;
-                border: none;
-                color: white;
-                text-align: center;
-                font-size: 16px;
-                border-radius: 5px;
-                position: absolute;
-                top: 50%;
-                left: 45%;
-            }
-
-            .form-wrapper
-                input {
-                    position: absolute;
-                    top: 30%;
-                    left: 33%;
-                    width: 33%;
-                    font-size: 16px;
-                    padding: 8px 16px;
-                    border: 2px solid #9E579D;
-                    border-radius: 5px;
-                }
-
-                input:focus {
-                    border: 2px solid #555;
-                }
-
-                input::-webkit-input-placeholder {
-                    font-family: "Roboto";
-                }
-        </style>
-      	<script>
-      		function transitionToCard(){
-      		      	window.location.href = "http://localhost:8443/card.html";
-          		}
-      	</script>
+            background-color: #574B90;
+        }
         
-        <link href="https://fonts.googleapis.com/css?family=Coming+Soon|Roboto|Sacramento" rel="stylesheet">
-    </head>
-    <body>
-        <div class="main-wrapper">
-            <p>jobsforhosh</p>
-            <div class="form-wrapper">
-                <form>
-                    <input type="text"   
-                           placeholder="email">
-                </form>
-            </div>
-            <div class="button-wrapper">
-                <button class="submit-button" 
-                        onclick="transitionToCard()">Sign up</button>
-            </div>
+        body p {
+            font-family: "Coming Soon";
+            color: white;
+            font-size: 40px;
+            left: 43%;
+            top: 0%;
+            position: absolute;
+        }
+        
+        .button-wrapper button {
+            text-align: center;
+            /*    background-color: #4CAF50;*/
+            background-color: #FC85AE;
+            font-family: "Roboto";
+            padding: 15px 32px;
+            border: none;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 45%;
+        }
+        
+        .form-wrapper input {
+            position: absolute;
+            top: 30%;
+            left: 33%;
+            width: 33%;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: 2px solid #9E579D;
+            border-radius: 5px;
+        }
+        
+        input:focus {
+            border: 2px solid #555;
+        }
+        
+        input::-webkit-input-placeholder {
+            font-family: "Roboto";
+        }
+    </style>
+    <script>
+        function transitionToCard() {
+            window.location.href = "http://localhost:8443/card.html";
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Coming+Soon|Roboto|Sacramento" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <p>jobsforhosh</p>
+        <div class="form-wrapper">
+            <form>
+                <input type="text" placeholder="email">
+            </form>
         </div>
-    </body>
+        <div class="button-wrapper">
+            <button class="submit-button" onclick="transitionToCard()">Sign up</button>
+        </div>
+    </div>
+</body>
+
 </html>
