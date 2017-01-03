@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JobsForHosh</title>
+    <style>
+        .main-wrapper {
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .header {
+            height: 20%;
+            max-height: 20%;
+            padding-top: 2%;
+        }
+        
+        img {
+            display: block;
+            max-height: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .signup-wrapper {
+            width: 25%;
+            height: 300px;
+            margin-left: 37.5%;
+        }
+        
+        .form-wrapper {
+            width: 99%;
+            height: 50%;
+        }
+        
+        form {
+            width: 100%;
+            height: 50%;
+        }
+        
+        input {
+            width: 100%;
+            height: 60%;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            border: 1px solid #F0F1F2;
+            background-color: #f9f9f9;
+            font-family: "Roboto";
+        }
+        
+        input:hover {
+            border: 1px solid #DADEE6;
+        }
+        
+        input:focus {
+            outline-width: 0;
+            border: 1px solid #574B90;
+        }
+        
+        input[placeholder] {
+            padding-left: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+        .button-wrapper {
+            width: 100%;
+            height: 50%;
+        }
+        
+        .login-button {
+            width: 100%;
+            height: 40%;
+            background-color: #574B90;
+            border-radius: 4px;
+            border: none;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 10%;
+            outline-width: 0;
+            font-family: "Roboto";
+        }
+        
+        .signup-button {
+            height: 25%;
+            width: 25%;
+            margin-left: 37.5%;
+            border: 1px solid #9E579D;
+            background-color: white;
+            border-radius: 4px;
+            color: #574B90;
+            outline-width: 0;
+            font-family: "Roboto";
+        }
+        
+        .signup-button:hover {
+            border: 1px solid #574B90;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function getBrowser() {
+            if (navigator.userAgent.indexOf("Chrome") != -1) {
+                alert("Chrome");
+                return;
+            } else if (navigator.userAgent.indexOf("Opera") != -1) {
+                alert("Opera");
+                return;
+            } else if (navigator.userAgent.indexOf("MSIE") != -1) {
+                alert("IE");
+                return;
+            } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+                alert("Firefox");
+                return;
+            } else {
+                alert("unknown");
+                return;
+            }
+        }
+
+        function checkInput() {
+
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Coming+Soon|Roboto|Sacramento" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="header">
+            <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/090/cache/african-elephant-standing_9033_600x450.jpg" />
+        </div>
+        <div class="signup-wrapper">
+            <div class="form-wrapper">
+                <form>
+                    <input type="text" placeholder="Email">
+                </form>
+                <form>
+                    <input type="text" placeholder="Password">
+                </form>
+            </div>
+            <div class="button-wrapper">
+                <button class="login-button" onclick="getBrowser()">LOG IN</button>
+                <button class="signup-button" onclick="getBrowser()">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

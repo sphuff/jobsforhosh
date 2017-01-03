@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cards</title>
+    <style>
+        .body {
+            margin: 0;
+        }
+        
+        .main-wrapper {
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .card-wrapper {
+            margin-top: 2%;
+            height: 60%;
+            width: 25%;
+            margin-left: 37.5%;
+        }
+        /*
+        .list .card {
+          display: none;
+        }
+
+        .list .current {
+          display: block;
+        }
+*/
+        
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #574B90;
+            transform-origin: 50% 99%;
+            border-radius: 2%;
+            overflow: hidden;
+        }
+        
+        .card div {
+            border: 1px solid #574B90;
+            border-radius: 2%;
+            font-family: 'Roboto';
+        }
+        
+        .card .job-name {
+            border: none;
+            position: relative;
+            font-size: 16px;
+            margin-top: 2%;
+            margin-left: 2%;
+            width: 40%;
+            height: 2em;
+            color: #9E579D;
+        }
+        
+        .card .company-name {
+            border: none;
+            position: relative;
+            font-size: 14px;
+            margin-left: 2%;
+            color: gray;
+            width: 40%;
+            height: 2em;
+        }
+        
+        .card .job-desc {
+            position: relative;
+            width: 75%;
+            max-height: 70%;
+            margin-left: 12%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+            overflow: scroll;
+        }
+        
+        .card .job-desc p {
+            color: #9E579D;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .button-wrapper {
+            position: relative;
+            width: 10%;
+            margin-top: 1%;
+            margin-left: 45%;
+            text-align: center;
+            /*                display: inline-table;*/
+        }
+        
+        .but-num {
+            border-radius: 30%;
+            width: 17%;
+            background-color: whitesmoke;
+        }
+        
+        .but-num:hover {
+            background-color: #FC85AE !important;
+            color: #BFFC85 !important;
+        }
+        
+        .but-submit {
+            position: relative;
+            margin-top: 5%;
+            width: 50%;
+            border-radius: 15%;
+            background-color: whitesmoke;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // do some database call for first card..try to use iterator pattern
+            // var jobName, companyName, jobDesc = jobIterator.nextJob()
+
+            //            writeText("testName", "testCompany", "Hi");
+        });
+    </script>
+    <script>
+        function writeText(jobName, companyName, jobDesc) {
+            console.log("test");
+            document.getElementById('job-desc').textContent = jobDesc;
+            document.getElementById('job-name').textContent = jobName;
+            document.getElementById('company-name').textContent = companyName;
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Coming+Soon|Roboto|Sacramento" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="card-wrapper">
+            <!--        <ul>-->
+            <div class="card current">
+                <div id="job-name" class="card job-name">
+                    Job Name
+                </div>
+                <div id="company-name" class="card company-name">
+                    Company Name
+                </div>
+                <div class="card job-desc">
+                    <p id="job-desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio diam, tincidunt sit amet consectetur eu, iaculis tempor dolor. Suspendisse viverra consectetur urna vitae congue. Maecenas elementum, ligula vitae viverra pellentesque, tellus dui condimentum
+                        ante, a ultricies ex enim at nisi. Nam eget vulputate magna, a euismod risus. Aliquam eros tellus, venenatis nec diam vel, interdum convallis tortor. Vestibulum varius pharetra dolor. Praesent et ligula id massa semper dictum.
+                        Curabitur sed consequat nulla. Integer sed finibus purus. Quisque iaculis vulputate nulla bibendum viverra. Vestibulum imperdiet porta tincidunt. Nunc eget bibendum elit, sit amet placerat massa. Nunc vestibulum odio vitae justo
+                        lacinia, sit amet pharetra eros consequat. Nulla ornare finibus lorem, a suscipit lorem tempus at. Sed porta nulla at tincidunt sollicitudin. Vivamus mollis sagittis dolor, non ornare nisl bibendum non. Aliquam et ornare lacus.
+                        Aenean sed auctor elit. Vivamus vel risus sollicitudin, semper eros nec, pulvinar arcu. Morbi rhoncus nec turpis aliquet porta. Morbi fermentum nulla in mi ultrices accumsan. Nulla et sagittis risus, pharetra lacinia elit. Nulla
+                        aliquet libero a lectus rutrum, at varius arcu eleifend. Proin finibus sit amet ex eu venenatis. Donec lobortis fermentum ipsum, vel hendrerit odio placerat ac. Suspendisse potenti. Praesent at orci magna. Integer vel arcu feugiat,
+                        interdum justo cursus, mollis sem. Vivamus sollicitudin fringilla libero, ac porttitor ligula commodo sed. Nunc nec finibus urna. Maecenas dolor ligula, mattis sed molestie dignissim, ornare nec quam. Sed eget ullamcorper nibh.
+                        Phasellus nisl lectus, commodo at elit id, egestas fringilla nisi. Nullam ut commodo urna. Nulla in enim sit amet est ornare commodo. Mauris pellentesque tortor eget erat efficitur venenatis. Cras id mi non augue blandit lacinia.
+                        Donec non tincidunt eros, in auctor massa. Integer in augue sagittis, malesuada ipsum nec, bibendum lectus. Nullam malesuada orci est, vitae pharetra nibh ultricies non. Duis gravida justo et eros accumsan vestibulum. Sed mattis
+                        mollis neque, eu dignissim est aliquam et. Sed laoreet est est, sodales vulputate lorem commodo sed. Morbi in imperdiet turpis, sed maximus tortor. Curabitur in imperdiet enim. Suspendisse viverra tellus id purus sodales imperdiet.
+                        Quisque posuere pretium justo, in pulvinar urna laoreet nec. Fusce ut congue elit. Donec mattis turpis ut ex malesuada, eget ultricies magna convallis. Curabitur sit amet enim vitae erat cursus sodales. Nulla ornare odio eget vestibulum
+                        pellentesque.
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-wrapper">
+            <button class="but-num">1</button>
+            <button class="but-num">2</button>
+            <button class="but-num">3</button>
+            <button class="but-num">4</button>
+            <button class="but-num">5</button>
+            <button class="but-submit" onclick="submit()">submit</button>
+        </div>
+    </div>
+    <script>
+        var selectedBut = null;
+        $(".but-num").click(function() {
+            $(".but-num").each(function() {
+                $(this).css('background-color', 'whitesmoke');
+                $(this).css('color', 'black');
+            });
+            $(this).css('background-color', '#9E579D');
+            $(this).css('color', '#ECF9AE');
+            selectedBut = $(this);
+            console.log(selectedBut.text());
+        });
+
+        function submit() {
+            if (selectedBut == null) {
+                window.alert("Please select a score for this job.");
+            }
+        }
+
+        $(".but-yes").click(function() {
+            // alert($( this ).css( "transform" ));
+            if ($(".card").css("transform") == 'none') {
+                var currentOpacity = 1.0;
+                var count = 0;
+                $(".card").animateRotate(45, {
+                    duration: 500,
+                    easing: 'swing',
+                    complete: function() {},
+                    step: function() {
+                        currentOpacity -= .03;
+                        count++;
+                        // console.log(currentOpacity);
+                        // console.log(count);
+                        $(".card").css("opacity", currentOpacity);
+                    }
+                });
+            } else {
+                $(".card").css("-webkit-transform", "");
+            }
+        });
+
+        $(".but-no").click(function() {
+            // alert($( this ).css( "transform" ));
+            if ($(".card").css("transform") == 'none') {
+                var currentOpacity = 1.0;
+                var count = 0;
+                $(".card").animateRotate(-45, {
+                    duration: 500,
+                    easing: 'swing',
+                    complete: function() {},
+                    step: function() {
+                        currentOpacity -= .03;
+                        count++;
+                        // console.log(currentOpacity);
+                        // console.log(count);
+                        $(".card").css("opacity", currentOpacity);
+                    }
+                });
+            } else {
+                $(".card").css("-webkit-transform", "");
+            }
+        });
+    </script>
+</body>
+
+</html>
