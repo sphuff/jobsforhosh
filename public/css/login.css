@@ -22,19 +22,20 @@ img {
     margin-left: 37.5%;
 }
 
-.form-wrapper {
-    width: 99%;
-    height: 50%;
+form {
+  height: 30%;
+  width: 100%;
 }
 
-.form-wrapper form {
-    width: 100%;
-    height: 50%;
+.primary-form {
+  height: 70%;
+  width: 100%;
 }
 
 input {
     width: 100%;
-    height: 60%;
+    height: 23%;
+    margin-bottom: 8%;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
@@ -58,34 +59,28 @@ input[placeholder] {
     font-size: 14px;
 }
 
-.button-wrapper {
+.form-wrapper {
     width: 100%;
-    height: 50%;
-}
-
-.button-wrapper form {
-  width: 100%;
-  height: 40%;
-  margin-bottom: 10%;
+    height: 100%;
 }
 
 .primary-button {
     width: 100%;
-    height: 100%;
+    height: 30%;
     background-color: #574B90;
     border-radius: 4px;
     border: none;
     color: white;
     font-size: 14px;
-    margin-bottom: 10%;
     outline-width: 0;
     font-family: "Roboto";
 }
 
 .secondary-button {
-    height: 62.5%;
+    height: 40%;
     width: 25%;
     margin-left: 37.5%;
+    margin-top: 10%;
     border: 1px solid #9E579D;
     background-color: white;
     border-radius: 4px;

@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
 var expressLayouts = require('express-ejs-layouts');
+var bodyParser = require('body-parser');
 var port = 12345;
 var router = require('./app/routes.js');
 
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+
+app.use(bodyParser.urlencoded());
 
 app.use('/', router);
 

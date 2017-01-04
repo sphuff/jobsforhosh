@@ -4,26 +4,18 @@
 <%- contentFor('main') %>
 <div class="main-wrapper">
     <div class="header">
-        <img src="http://images.nationalgeographic.com/wpf/media-live/photos/000/090/cache/african-elephant-standing_9033_600x450.jpg" />
+        <img src="img/logo1.svg" />
     </div>
     <div class="content-wrapper">
         <div class="form-wrapper">
-            <form>
-                <input type="text" placeholder="Email">
+            <form class="primary-form" action="/login" method="post">
+              <input type="text" placeholder="Email" name="email">
+              <input type="text" placeholder="Password" name="password">
+              <button type="submit" class="primary-button">LOG IN</button>
             </form>
-            <form>
-                <input type="text" placeholder="Password">
+            <form action="/login">
+              <button class="secondary-button">SIGN UP</button>
             </form>
-        </div>
-        <div class="button-wrapper">
-            <!-- <button class="primary-button" onclick="getBrowser()">LOG IN</button> -->
-            <form action="/login" method="post">
-              <button class="primary-button" onclick="getBrowser()">LOG IN</button>
-            </form>
-            <form action="/signup">
-              <button class="secondary-button" onclick="getBrowser()">SIGN UP</button>
-            </form>
-            <!-- <button class="secondary-button" onclick="getBrowser()">SIGN UP</button> -->
         </div>
     </div>
 </div>
