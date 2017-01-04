@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var router = express.Router();
+const jobsController = require('./controllers/jobs.controller');
 
 module.exports = router;
 
@@ -25,3 +26,6 @@ router.post('/signup', function(req, res){
 router.get('/card', function(req, res){
   res.sendFile(path.join(__dirname, '../views/pages/card.html'));
 });
+
+router.get('/job', jobsController.showJob);
+router.post('/job', jobsController.saveJob);

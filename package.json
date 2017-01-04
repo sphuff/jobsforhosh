@@ -23,6 +23,7 @@
     "express": "^4.14.0",
     "express-ejs-layouts": "^2.2.0",
     "mongodb": "^2.2.19",
+    "mongoose": "^4.7.6",
     "nodemon": "^1.11.0"
   }
 }
