@@ -3,7 +3,8 @@ var express = require('express');
 var app = express();
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
-var router = require('./app/routes.js');
+var mainRouter = require('./app/main_routes.js');
+var apiRouter = require('./app/api_routes.js');
 var mongoose = require('mongoose');
 
 app.set('view engine', 'ejs');
@@ -13,7 +14,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.use('/', router);
+app.use('/', mainRouter);
+app.use('/api', apiRouter);
 
 app.use(express.static(__dirname + '/public'));
 

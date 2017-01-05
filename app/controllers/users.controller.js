@@ -69,7 +69,7 @@ module.exports = {
         {
           code: 400, 
           title: "Bad Request", 
-          description: "Must pass both username and cemail"
+          description: "Must pass valid email and password"
         }});
       return;
     }
