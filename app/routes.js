@@ -27,5 +27,5 @@ router.get('/card', function(req, res){
   res.sendFile(path.join(__dirname, '../views/pages/card.html'));
 });
 
-router.get('/job', jobsController.showJob);
-router.post('/job', jobsController.saveJob);
+router.get('/jobs', jobsController.showJob);
+router.post('/jobs', jobsController.saveJob);

@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,14 @@
   "homepage": "https://github.com/sphuff/jobsforhosh#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "dotenv": "^2.0.0",
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-ejs-layouts": "^2.2.0",
+    "mocha": "^3.2.0",
+    "mockgoose": "^6.0.8",
     "mongodb": "^2.2.19",
     "mongoose": "^4.7.6",
     "nodemon": "^1.11.0"

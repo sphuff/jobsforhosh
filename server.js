@@ -9,7 +9,9 @@ var mongoose = require('mongoose');
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use('/', router);
 
@@ -20,3 +22,5 @@ mongoose.connect(process.env.DB_URI);
 app.listen(process.env.port, function(){
   console.log('listening on ' + process.env.port);
 });
+
+module.exports = app; // for testing
