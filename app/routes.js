@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 const jobsController = require('./controllers/jobs.controller');
+const usersController = require('./controllers/users.controller');
 
 module.exports = router;
 
@@ -29,3 +30,6 @@ router.get('/card', function(req, res){
 
 router.get('/jobs', jobsController.showJob);
 router.post('/jobs', jobsController.saveJob);
+
+router.get('/users', usersController.showUser);
+router.post('/users', usersController.saveUser);
