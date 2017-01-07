@@ -1,0 +1,11 @@
+.main-wrapper {
+  margin: 0px 0px 0px 0px;
+}
+
+.welcome {
+  width: 120%;
+  height: 33%;
+  background-color: gray;
+  text-align: center;
+  margin-left: -10%;
+}
