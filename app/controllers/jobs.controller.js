@@ -6,32 +6,33 @@ function isValidId(id){
   if (id != null && id.match(/^[0-9a-fA-F]{24}$/)){
     return true;
   }
-    
+
   return false;
 }
 
 function isValidJobObject(jobObject){
   if (jobObject.company && jobObject.title)
     return true;
-  else 
+  else
     return false;
 }
 
 function constructJobObjectFromRequest(req) {
-  
+
   var job = {};
   job.title = req.body.title;
   job.company = req.body.company;
+  job.forUser = req.body.forUser;
   job.description = req.body.description || "lorem";
   job.date = new Date();
-  
+
   return job;
 }
 
 // exported controller methods
 module.exports = {
   showJob : (req, res) => {
-    
+
     if (!isValidId(req.query.id)) {
       res.status(400).send({error:
       {
@@ -41,7 +42,7 @@ module.exports = {
       }});
       return;
     }
-    
+
     Job.findById(req.query.id, function(err, job){
       if (err) {
         res.send(err);
@@ -52,23 +53,23 @@ module.exports = {
     });
     // render page
   },
-  
+
   saveJob : (req, res) => {
-    
+
     if (!isValidJobObject(req.body)) {
-      res.status(400).send({error: 
+      res.status(400).send({error:
         {
-          code: 400, 
-          title: "Bad Request", 
+          code: 400,
+          title: "Bad Request",
           description: "Must pass both job title and company name"
         }});
       return;
     }
-    
+
     const jobObject = constructJobObjectFromRequest(req);
     var newJob = new Job(jobObject);
     newJob.save();
-    
+
     res.send(newJob);
     // render page
   }

@@ -29,21 +29,28 @@ function isValidUserObject(userObject){
 
 // exported controller methods
 module.exports = {
-  showUser : (req, res) => {
+  showUser : (req, res, next) => {
 
     User.findOne({email: req.query.email}, function(err, user){
       if (err) res.send(err);
       else if (user == null) res.status(404).send('User not found');
       user.comparePassword(req.query.password, function(err, isMatch) {
           if (err) res.send(err);
-          if (isMatch) res.redirect('/user');
+          if (isMatch) {
+            // var userInfo = encodeURIComponent(user);
+            // console.log(userInfo);
+            // res.redirect('/user?'+userInfo);
+            req.query.email = user.email;
+            console.log(req.query.email);
+            return next();
+          }
           else res.status(401).send('Invalid password');
       });
     })
     // render page
   },
 
-  saveUser : (req, res) => {
+  saveUser : (req, res, next) => {
 
     if (!isValidUserObject(req.body)) {
       res.status(400).send({error:
@@ -64,6 +71,8 @@ module.exports = {
       if (err) res.send(err);
     });
     // render page
-    res.redirect('/user');
+    req.query.email = newUser.email;
+    console.log(req.query.email);
+    return next();
   }
 }

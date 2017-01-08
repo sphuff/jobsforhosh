@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 const jobSchema = new Schema({
   title: String,
   company: String,
+  forUser: {type: String, required: true},
   date: Date,
   description: String
 });

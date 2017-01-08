@@ -18,6 +18,18 @@ router.get('/signup', function(req, res){
   res.render('pages/signup', {title: 'signup'});
 });
 
-router.get('/user', function(req, res){
-  res.render('pages/user_page', {title: 'User Page'});
+router.get('/user', usersController.showUser, function(req, res){
+  // var userInfo = decodeURIComponent(req.query);
+  // console.log(userInfo);
+  // console.log(req.query);
+  console.log(req.query.email);
+  res.render('pages/user_page', {title: 'User Page', email: req.query.email});
+});
+
+router.post('/user', usersController.saveUser, function(req, res){
+  // var userInfo = decodeURIComponent(req.query);
+  // console.log(userInfo);
+  // console.log(req.query);
+  console.log(req.query.email);
+  res.render('pages/user_page', {title: 'User Page', email: req.query.email});
 });

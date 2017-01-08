@@ -15,17 +15,17 @@ chai.use(chaiHttp);
 describe('Jobs', function(){
   before(function() {
     mongoose.Promise = global.Promise;
-    mongoose.createConnection(process.env.DB_URI, function(err) {
+    mongoose.createConnection(process.env.TEST_DB_URI, function(err) {
         if(err){
           console.log(err);
         }
     });
   });
-  
+
   after(function(){
     mongoose.disconnect();
   });
-  
+
   var job_id = null;
   it('should POST a new job', function(done){
     chai.request(server)
@@ -39,7 +39,7 @@ describe('Jobs', function(){
         done();
       });
   });
-  
+
   it('should GET the job', function(done){
     chai.request(server)
       .get('/jobs')
@@ -78,3 +78,5 @@ describe('Jobs', function(){
       });
   });
 });
+
+// get jobs for user
