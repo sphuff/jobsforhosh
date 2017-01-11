@@ -1,0 +1,21 @@
+html, body {
+  margin: 0px 0px 0px 0px;
+}
+
+nav {
+  margin-top: 2%;
+  margin-left: 80%;
+  font-size: 14px;
+  font-family: "Coming+Soon";
+  color: #333;
+}
+
+nav a {
+  padding-right: 10%;
+  color: #96989b;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #574B90;
+}
