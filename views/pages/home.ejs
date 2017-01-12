@@ -2,14 +2,23 @@
 <link rel="stylesheet" href="css/home.css">
 
 <%- contentFor('main') %>
-<div class="main-wrapper">
-    <p>jobsforhosh</p>
-    <div class="form-wrapper">
-        <form>
-            <input type="text" placeholder="email">
+    <header>
+      <img src="img/logo1.svg" />
+    </header>
+    <div class="content-wrapper">
+      <div class="inner-content-wrapper">
+        <h1>
+          Jobs.
+        </h1>
+        <h3>
+          Because you deserve them.
+        </h3>
+        
+        <form action="/signup">
+          <button class="CTA-button">Start Searching</button>
+          <buttton class="button-shadow"></buttton>
         </form>
+      </div>
+      
     </div>
-    <div class="button-wrapper">
-        <button class="submit-button" onclick="transitionToCard()">Sign up</button>
-    </div>
-</div>
+    <div class="shadow"></div>
