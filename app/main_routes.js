@@ -44,7 +44,7 @@ router.post('/user', usersController.saveUser, function(req, res){
   });
 
   var mailOptions = {
-    from: 'Steve@test.com',
+    from: 'jobs@jobsforhosh.com',
     to: 'you@test.com',
     subject: 'This is a test',
     text: 'Hi there',

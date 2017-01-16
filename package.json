@@ -5,8 +5,6 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "start-server": "mongod --fork --logpath=/dev/null --dbpath=/Users/sphuff/Documents/Coding/jobsforhosh/data",
-    "stop-server": "mongo --eval 'shutdownServer()'",
     "test": "mocha"
   },
   "repository": {
@@ -33,6 +31,7 @@
     "mockgoose": "^6.0.8",
     "mongodb": "^2.2.19",
     "mongoose": "^4.7.6",
+    "morgan": "^1.7.0",
     "nodemailer": "^2.7.0",
     "nodemon": "^1.11.0",
     "request": "^2.79.0"

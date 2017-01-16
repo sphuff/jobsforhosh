@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var mainRouter = require('./app/main_routes.js');
 var apiRouter = require('./app/api_routes.js');
 var mongoose = require('mongoose');
+var morgan = require('morgan');
 
 mongoose.Promise = global.Promise;
 
@@ -15,6 +16,7 @@ app.use(expressLayouts);
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(morgan('dev'));
 
 app.use('/', mainRouter);
 app.use('/api', apiRouter);
