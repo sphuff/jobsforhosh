@@ -31,5 +31,32 @@ router.post('/user', usersController.saveUser, function(req, res){
   // console.log(userInfo);
   // console.log(req.query);
   console.log(req.query.email);
-  res.render('pages/user_page');
+  console.log('ready');
+  var nodemailer = require('nodemailer');
+
+  var transport = nodemailer.createTransport({
+    host: "mailtrap.io",
+    port: 2525,
+    auth: {
+      user: "a66c20b3450069",
+      pass: "24ff36ee091b02"
+    }
+  });
+
+  var mailOptions = {
+    from: 'Steve@test.com',
+    to: 'you@test.com',
+    subject: 'This is a test',
+    text: 'Hi there',
+    html: '<p>This is the body</p> <a href="http://localhost:12345/">Link</a>'
+  }
+
+  transport.sendMail(mailOptions, function(err, info){
+    if (err){
+      console.log(err);
+    }
+    console.log('Message sent: ' + info.response);;
+  });
+
+  res.render('pages/thanks', {email: req.query.email});
 });
